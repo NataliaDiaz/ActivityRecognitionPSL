@@ -1,7 +1,8 @@
 # ActivityRecognitionPSL
 Human activity recognition with Probabilistic Soft Logic
 
-Author: Natalia Díaz Rodríguez, PhD
+Author: Natalia Díaz Rodríguez, PhD.
+
 LINQS Lab at University of California Santa Cruz
 
 Extension of the work done in my PhD Thesis, available at:
