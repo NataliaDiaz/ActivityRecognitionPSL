@@ -1,0 +1,3 @@
+plate	3
+plate	9
+plate	52
