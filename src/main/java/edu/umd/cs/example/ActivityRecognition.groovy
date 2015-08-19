@@ -186,9 +186,9 @@ GroundTerm nullObject = data.getUniqueID(90);*/
 //m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O, T3) & performsOpen(MedicineBox, T4) & performsEat(MedicineBox, T5) & performsDrink(Cup, T6) & medicineObject(O) & follows(T1,T2, T3) & follows(T3,T4,T5) & precedes(T5,T6)) >> performsTakingMedicine(T6), weight : 8;
 
 //RULE 1: WORKS
-m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O,  T3) & performsNull(O, T4) &  stackable(O) & precedes(T3, T4)) >> performsStackingObjects(T4), weight: initialWeight, squared: sq; // & (T1-T2)  ADD follows(T1, T2, T3) &
+m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O, T3) & performsNull(O, T4) &  stackable(O) & precedes(T3, T4)) >> performsStackingObjects(T4), weight: initialWeight, squared: sq; // & (T1-T2)  ADD follows(T1, T2, T3) &
 //RULE 2: DOES NOT WORK!!
-m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O, T3) & performsOpen(O,T4) & performsClose(O,T5) & follows(T1,T2,T3) & follows(T3,T4,T5) & microwavableObject(O)) >> performsMicrowaving(T5), weight: initialWeight, squared: sq;
+m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O, T3) & performsOpen(O,T4) & performsClose(O,T5) & precedes(T1,T2) & microwavableObject(O)) >> performsMicrowaving(T5), weight: initialWeight, squared: sq; //follows(T1,T2,T3) & follows(T3,T4,T5)
 //RULE 3: WORKS
 m.add rule: (performsReach(O, T1) & performsMove(O, T2) & performsPlace(O, T3) & performsNull(O, T4) & precedes(T3, T4) & stackable(O)) >> performsUnstackingObjects(T4), weight: initialWeight, squared: sq; // add follows(T1, T2, T3) & 
 

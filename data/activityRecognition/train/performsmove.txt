@@ -1,2 +1,2 @@
 plate	2
-plate	8
+microwave	8
