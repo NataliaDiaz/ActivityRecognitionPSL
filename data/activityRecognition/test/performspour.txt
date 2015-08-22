@@ -1,2 +1,2 @@
-plate	1
-plate	4
+plate	71
+plate	74

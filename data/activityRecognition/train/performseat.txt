@@ -1,2 +1,3 @@
-plate	1
-plate	4
+plate	100
+plate	400
+medcinebox	85

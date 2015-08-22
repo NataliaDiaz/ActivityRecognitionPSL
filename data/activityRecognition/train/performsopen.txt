@@ -1,1 +1,2 @@
 microwave	10
+medcinebox	84
