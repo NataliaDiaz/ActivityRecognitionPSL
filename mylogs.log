@@ -1,0 +1,618 @@
+24-09-2015 15:40:11 INFO  ConfigManager:105 - No value found for option PSLHAR.outpath. Returning default of output/results/.
+24-09-2015 15:40:11 DEBUG ConfigManager:118 - Set option PSLHAR.rdbmsdatastore.usestringids to false.
+24-09-2015 15:40:11 INFO  ConfigManager:105 - No value found for option PSLHAR.dbpath. Returning default of data\H2DB.
+24-09-2015 15:40:12 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.valuecolumn. Returning default of truth.
+24-09-2015 15:40:12 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.confidencecolumn. Returning default of confidence.
+24-09-2015 15:40:12 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.partitioncolumn. Returning default of partition.
+24-09-2015 15:40:12 INFO  ConfigManager:102 - Found value false for option PSLHAR.rdbmsdatastore.usestringids.
+24-09-2015 15:40:12 DEBUG RDBMSDataStore:201 - Registered 0 pre-existing predicates from RDBMS.
+24-09-2015 15:40:14 INFO  App:? - Inserting data done!
+24-09-2015 15:40:14 INFO  App:? - Populating databases ...
+24-09-2015 15:40:14 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:14 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (7,15,23,31,40) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:14 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 15:40:14 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:14 INFO  App:? - Starting experiment ...
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:14 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 15:40:14 INFO  ConfigManager:102 - Found value MLE for option PSLHAR.learningmethod.
+24-09-2015 15:40:14 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:14 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,38) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:14 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@41ce0ff8.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 15:40:14 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 15:40:14 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,38) )
+24-09-2015 15:40:14 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:14 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 15:40:14 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database0','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 2400
+24-09-2015 15:40:15 DEBUG AbstractRuleKernel:83 - Grounded 2400 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (6,14,22,30,38) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (6,14,22,30,38) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (6,14,22,30,38) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (6,14,22,30,38) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (6,14,22,30,38) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (6,14,22,30,38) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (6,14,22,30,38) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (6,14,22,30,38) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (6,14,22,30,38) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (6,14,22,30,38) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (6,14,22,30,38) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (6,14,22,30,38) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database1','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:15 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (6,14,22,30,38) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (6,14,22,30,38) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database2','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:15 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 15:40:15 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 15:40:15 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 15:40:15 DEBUG ADMMReasoner:230 - Initializing objective terms for 2400 ground kernels
+24-09-2015 15:40:15 DEBUG ADMMReasoner:436 - Performing optimization with 160 variables and 2400 terms.
+24-09-2015 15:40:15 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 15:40:15 TRACE ADMMReasoner:498 - --------- Epsilon primal: 6.92820323027551E-4 -- Epsilon dual: 6.92820323027551E-4
+24-09-2015 15:40:15 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 15:40:15 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 15:40:15 INFO  App:? - Objective: 0.0
+24-09-2015 15:40:15 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (38) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:15 TRACE RDBMSDatabase:521 - Executing a batch of 1960 statements.
+24-09-2015 15:40:15 INFO  App:? - Populating databases ...
+24-09-2015 15:40:15 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:15 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (5,13,21,29,45) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:15 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 15:40:15 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:15 INFO  App:? - Starting experiment ...
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:15 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 15:40:15 INFO  ConfigManager:102 - Found value [MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 15:40:15 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:15 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,43) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:15 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@41ce0ff8.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 15:40:15 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,43) )
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:15 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 15:40:15 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database3','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 15:40:15 TRACE RDBMSDatabase:614 - Number of results: 2400
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 2400 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (4,12,20,28,43) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (4,12,20,28,43) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (4,12,20,28,43) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (4,12,20,28,43) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (4,12,20,28,43) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (4,12,20,28,43) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (4,12,20,28,43) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (4,12,20,28,43) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (4,12,20,28,43) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (4,12,20,28,43) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (4,12,20,28,43) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (4,12,20,28,43) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database4','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (4,12,20,28,43) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (4,12,20,28,43) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database5','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 15:40:16 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:230 - Initializing objective terms for 2400 ground kernels
+24-09-2015 15:40:16 DEBUG ADMMReasoner:436 - Performing optimization with 160 variables and 2400 terms.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 15:40:16 TRACE ADMMReasoner:498 - --------- Epsilon primal: 6.92820323027551E-4 -- Epsilon dual: 6.92820323027551E-4
+24-09-2015 15:40:16 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 15:40:16 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 15:40:16 INFO  App:? - Objective: 0.0
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (43) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 1960 statements.
+24-09-2015 15:40:16 INFO  App:? - Populating databases ...
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (3,11,19,27,35,50) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:16 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 15:40:16 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 15:40:16 INFO  App:? - Starting experiment ...
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 15:40:16 INFO  ConfigManager:102 - Found value [MLE, MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 15:40:16 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,48) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 15:40:16 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@41ce0ff8.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,48) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 15:40:16 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database6','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 3000
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 3000 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (2,10,18,26,34,48) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (2,10,18,26,34,48) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (2,10,18,26,34,48) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (2,10,18,26,34,48) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (2,10,18,26,34,48) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (2,10,18,26,34,48) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (2,10,18,26,34,48) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (2,10,18,26,34,48) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (2,10,18,26,34,48) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (2,10,18,26,34,48) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (2,10,18,26,34,48) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (2,10,18,26,34,48) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database7','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (2,10,18,26,34,48) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (2,10,18,26,34,48) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database8','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:16 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 15:40:16 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:230 - Initializing objective terms for 3000 ground kernels
+24-09-2015 15:40:16 DEBUG ADMMReasoner:436 - Performing optimization with 200 variables and 3000 terms.
+24-09-2015 15:40:16 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 15:40:16 TRACE ADMMReasoner:498 - --------- Epsilon primal: 7.745966692414834E-4 -- Epsilon dual: 7.745966692414834E-4
+24-09-2015 15:40:16 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 15:40:16 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 15:40:16 INFO  App:? - Objective: 0.0
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (48) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 1820 statements.
+24-09-2015 15:40:16 INFO  App:? - Populating databases ...
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 6 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (1,9,17,25,33,55) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 15:40:16 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 15:40:16 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 15:40:16 INFO  App:? - Starting experiment ...
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 15:40:16 INFO  ConfigManager:102 - Found value [MLE, MLE, MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 15:40:16 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,53) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 15:40:16 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@41ce0ff8.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 15:40:16 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,53) )
+24-09-2015 15:40:16 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 15:40:16 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 15:40:16 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database9','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 15:40:17 TRACE RDBMSDatabase:614 - Number of results: 7500
+24-09-2015 15:40:17 DEBUG AbstractRuleKernel:83 - Grounded 7500 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 15:40:17 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (0,8,16,24,32,53) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (0,8,16,24,32,53) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (0,8,16,24,32,53) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (0,8,16,24,32,53) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (0,8,16,24,32,53) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (0,8,16,24,32,53) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (0,8,16,24,32,53) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (0,8,16,24,32,53) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (0,8,16,24,32,53) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (0,8,16,24,32,53) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (0,8,16,24,32,53) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (0,8,16,24,32,53) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database10','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 15:40:17 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:17 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 15:40:17 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (0,8,16,24,32,53) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (0,8,16,24,32,53) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database11','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 15:40:17 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 15:40:17 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 15:40:17 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 15:40:17 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 15:40:17 DEBUG ADMMReasoner:230 - Initializing objective terms for 7500 ground kernels
+24-09-2015 15:40:17 DEBUG ADMMReasoner:436 - Performing optimization with 300 variables and 7500 terms.
+24-09-2015 15:40:17 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 15:40:17 TRACE ADMMReasoner:498 - --------- Epsilon primal: 0.0012247448713915891 -- Epsilon dual: 0.0012247448713915891
+24-09-2015 15:40:17 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 15:40:17 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 15:40:17 INFO  App:? - Objective: 0.0
+24-09-2015 15:40:17 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 15:40:17 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (53) )
+24-09-2015 15:40:17 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 15:40:17 TRACE RDBMSDatabase:521 - Executing a batch of 1560 statements.
+24-09-2015 15:40:17 INFO  App:? - 
+
+BASELINE RESULTS
+
+24-09-2015 15:40:17 INFO  App:? - 
+Baseline
+ Avg Acc: 1.0
+ Avg F1:  1.0
+
+24-09-2015 15:40:17 INFO  App:? - 
+Baseline
+ Cum Acc: 1.0
+ Cum F1:  0.9999999999999999
+
+24-09-2015 15:40:17 INFO  App:? - 
+Cum Recall Matrix:
+[ 1,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 1,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 1,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 1,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 1,000 ]
+24-09-2015 15:40:17 INFO  App:? - 
+
+RESULTS
+
+24-09-2015 15:40:17 INFO  App:? - 
+C
+ Avg Acc: NaN
+ Avg F1:  NaN
+
+24-09-2015 15:40:17 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:03 INFO  ConfigManager:105 - No value found for option PSLHAR.outpath. Returning default of output/results/.
+24-09-2015 23:06:03 DEBUG ConfigManager:118 - Set option PSLHAR.rdbmsdatastore.usestringids to false.
+24-09-2015 23:06:03 INFO  ConfigManager:105 - No value found for option PSLHAR.dbpath. Returning default of data\H2DB.
+24-09-2015 23:06:04 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.valuecolumn. Returning default of truth.
+24-09-2015 23:06:04 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.confidencecolumn. Returning default of confidence.
+24-09-2015 23:06:04 INFO  ConfigManager:105 - No value found for option PSLHAR.rdbmsdatastore.partitioncolumn. Returning default of partition.
+24-09-2015 23:06:04 INFO  ConfigManager:102 - Found value false for option PSLHAR.rdbmsdatastore.usestringids.
+24-09-2015 23:06:04 DEBUG RDBMSDataStore:201 - Registered 0 pre-existing predicates from RDBMS.
+24-09-2015 23:06:06 INFO  App:? - Inserting data done!
+24-09-2015 23:06:06 INFO  App:? - Populating databases ...
+24-09-2015 23:06:07 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:07 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (7,15,23,31,40) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:07 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 23:06:07 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,41) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:07 INFO  App:? - Starting experiment ...
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:07 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 23:06:07 INFO  ConfigManager:102 - Found value MLE for option PSLHAR.learningmethod.
+24-09-2015 23:06:07 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:07 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,38) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:07 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@49956ba5.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 23:06:07 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 23:06:07 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (6,14,22,30,38) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:07 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database0','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 2400
+24-09-2015 23:06:07 DEBUG AbstractRuleKernel:83 - Grounded 2400 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (6,14,22,30,38) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (6,14,22,30,38) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (6,14,22,30,38) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (6,14,22,30,38) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (6,14,22,30,38) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (6,14,22,30,38) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (6,14,22,30,38) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (6,14,22,30,38) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (6,14,22,30,38) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (6,14,22,30,38) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (6,14,22,30,38) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (6,14,22,30,38) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database1','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:07 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 23:06:07 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (6,14,22,30,38) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (6,14,22,30,38) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (6,14,22,30,38) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (6,14,22,30,38) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (6,14,22,30,38) ) AND (extFunctionCall('database2','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 23:06:07 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:07 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 23:06:07 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 23:06:07 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 23:06:07 DEBUG ADMMReasoner:230 - Initializing objective terms for 2400 ground kernels
+24-09-2015 23:06:07 DEBUG ADMMReasoner:436 - Performing optimization with 160 variables and 2400 terms.
+24-09-2015 23:06:07 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 23:06:07 TRACE ADMMReasoner:498 - --------- Epsilon primal: 6.92820323027551E-4 -- Epsilon dual: 6.92820323027551E-4
+24-09-2015 23:06:07 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 23:06:07 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 23:06:08 INFO  App:? - Objective: 0.0
+24-09-2015 23:06:08 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (38) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:08 TRACE RDBMSDatabase:521 - Executing a batch of 1960 statements.
+24-09-2015 23:06:08 INFO  App:? - Populating databases ...
+24-09-2015 23:06:08 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:08 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (5,13,21,29,45) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:08 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 23:06:08 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,46) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:08 INFO  App:? - Starting experiment ...
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:08 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 23:06:08 INFO  ConfigManager:102 - Found value [MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 23:06:08 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:08 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,43) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:08 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@49956ba5.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 23:06:08 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (4,12,20,28,43) )
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:08 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 23:06:08 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database3','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 23:06:08 TRACE RDBMSDatabase:614 - Number of results: 2400
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 2400 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (4,12,20,28,43) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (4,12,20,28,43) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (4,12,20,28,43) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (4,12,20,28,43) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (4,12,20,28,43) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (4,12,20,28,43) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (4,12,20,28,43) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (4,12,20,28,43) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (4,12,20,28,43) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (4,12,20,28,43) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (4,12,20,28,43) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (4,12,20,28,43) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database4','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (4,12,20,28,43) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (4,12,20,28,43) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (4,12,20,28,43) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (4,12,20,28,43) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (4,12,20,28,43) ) AND (extFunctionCall('database5','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 23:06:09 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:230 - Initializing objective terms for 2400 ground kernels
+24-09-2015 23:06:09 DEBUG ADMMReasoner:436 - Performing optimization with 160 variables and 2400 terms.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 23:06:09 TRACE ADMMReasoner:498 - --------- Epsilon primal: 6.92820323027551E-4 -- Epsilon dual: 6.92820323027551E-4
+24-09-2015 23:06:09 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 23:06:09 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 23:06:09 INFO  App:? - Objective: 0.0
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 160 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (43) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 160
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 1960 statements.
+24-09-2015 23:06:09 INFO  App:? - Populating databases ...
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 4 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (3,11,19,27,35,50) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:09 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 23:06:09 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,51) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 4
+24-09-2015 23:06:09 INFO  App:? - Starting experiment ...
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 23:06:09 INFO  ConfigManager:102 - Found value [MLE, MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 23:06:09 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,48) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 23:06:09 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@49956ba5.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (2,10,18,26,34,48) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 23:06:09 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database6','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 3000
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 3000 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (2,10,18,26,34,48) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (2,10,18,26,34,48) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (2,10,18,26,34,48) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (2,10,18,26,34,48) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (2,10,18,26,34,48) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (2,10,18,26,34,48) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (2,10,18,26,34,48) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (2,10,18,26,34,48) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (2,10,18,26,34,48) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (2,10,18,26,34,48) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (2,10,18,26,34,48) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (2,10,18,26,34,48) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database7','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (2,10,18,26,34,48) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (2,10,18,26,34,48) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (2,10,18,26,34,48) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (2,10,18,26,34,48) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (2,10,18,26,34,48) ) AND (extFunctionCall('database8','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:09 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 23:06:09 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:230 - Initializing objective terms for 3000 ground kernels
+24-09-2015 23:06:09 DEBUG ADMMReasoner:436 - Performing optimization with 200 variables and 3000 terms.
+24-09-2015 23:06:09 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 23:06:09 TRACE ADMMReasoner:498 - --------- Epsilon primal: 7.745966692414834E-4 -- Epsilon dual: 7.745966692414834E-4
+24-09-2015 23:06:09 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 23:06:09 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 23:06:09 INFO  App:? - Objective: 0.0
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 200 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (48) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 200
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 1820 statements.
+24-09-2015 23:06:09 INFO  App:? - Populating databases ...
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM TIMESTAMP_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 6 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (1,9,17,25,33,55) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 23:06:09 INFO  App:? - Log-ACTIVITY ACC: 1.0
+24-09-2015 23:06:09 INFO  App:? - Log-ACTIVITY F1:  1.0
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,56) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 6
+24-09-2015 23:06:09 INFO  App:? - Starting experiment ...
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 DEBUG ConfigManager:112 - Added MLE to option PSLHAR.learningmethod.
+24-09-2015 23:06:09 INFO  ConfigManager:102 - Found value [MLE, MLE, MLE, MLE] for option PSLHAR.learningmethod.
+24-09-2015 23:06:09 INFO  App:? - Log- Learning model...: Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 INFO  App:? - Learned model : 
+ Model:
+{constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+{10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+{10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,53) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 23:06:09 INFO  App:? - Log- Doing MPEInference..
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.mpeinference.reasoner. Returning default of edu.umd.cs.psl.reasoner.admm.ADMMReasonerFactory@49956ba5.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.maxiterations. Returning default of 25000.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stepsize. Returning default of 1.0.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonabs. Returning default of 1.0E-5.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.epsilonrel. Returning default of 0.001.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.stopcheck. Returning default of 1.
+24-09-2015 23:06:09 INFO  ConfigManager:105 - No value found for option PSLHAR.admmreasoner.numthreads. Returning default of 4.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS V0,t1.UniqueID_1 AS V1,t1.UniqueID_2 AS V2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (0,8,16,24,32,53) )
+24-09-2015 23:06:09 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 23:06:09 INFO  MPEInference:105 - Grounding out model.
+24-09-2015 23:06:09 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS A,t1.UniqueID_1 AS T1,t1.UniqueID_2 AS TE,t2.Integer_0 AS B,t2.UniqueID_1 AS T2 FROM PERFORMSACTIV_predicate t1, PERFORMSACTIV_predicate t2, PERFORMSACTIV_predicate t3 WHERE ((t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_2 = t1.UniqueID_2) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.Integer_0 = t2.Integer_0) AND (t3.UniqueID_1 = t2.UniqueID_1) AND (t3.UniqueID_2 = t1.UniqueID_2) AND (t3.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database9','extFun0',t1.UniqueID_1,t2.UniqueID_1) > 0.0))
+24-09-2015 23:06:10 TRACE RDBMSDatabase:614 - Number of results: 7500
+24-09-2015 23:06:10 DEBUG AbstractRuleKernel:83 - Grounded 7500 instances of rule {constraint} ( ( PERFORMSACTIV(A, T1, TE) & PERFORMSACTIV(B, T2, TE) ) & LESSTHAN(T1, T2) ) >> ~( PERFORMSACTIV(B, T2, TE) )
+24-09-2015 23:06:10 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_1 AS O1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_1 AS O2,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_1 AS O3,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7,t5.UniqueID_1 AS O4,t5.UniqueID_2 AS X4,t5.UniqueID_3 AS Y4,t5.UniqueID_4 AS Z4,t5.UniqueID_5 AS T8,t5.UniqueID_6 AS T9,t6.UniqueID_1 AS O5,t6.UniqueID_2 AS X5,t6.UniqueID_3 AS Y5,t6.UniqueID_4 AS Z5,t6.UniqueID_5 AS T10,t6.UniqueID_6 AS T11,t7.UniqueID_1 AS O6,t7.UniqueID_2 AS X6,t7.UniqueID_3 AS Y6,t7.UniqueID_4 AS Z6,t7.UniqueID_5 AS T12,t7.UniqueID_6 AS T13,t8.UniqueID_1 AS O7,t8.UniqueID_2 AS X7,t8.UniqueID_3 AS Y7,t8.UniqueID_4 AS Z7,t8.UniqueID_5 AS T14,t8.UniqueID_6 AS T15 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, PERFORMSSUBACTIV_predicate t5, PERFORMSSUBACTIV_predicate t6, PERFORMSSUBACTIV_predicate t7, PERFORMSSUBACTIV_predicate t8, HASOBJPROPERTY_predicate t9, HASOBJPROPERTY_predicate t10, HASOBJPROPERTY_predicate t11, HASOBJPROPERTY_predicate t12, HASOBJPROPERTY_predicate t13, HASOBJPROPERTY_predicate t14, HASOBJPROPERTY_predicate t15 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_0 = 1) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.UniqueID_0 = 2) AND (t3.partition IN (0,8,16,24,32,53) ) AND (t4.UniqueID_0 = 3) AND (t4.partition IN (0,8,16,24,32,53) ) AND (t5.UniqueID_0 = 1) AND (t5.partition IN (0,8,16,24,32,53) ) AND (t6.UniqueID_0 = 2) AND (t6.partition IN (0,8,16,24,32,53) ) AND (t7.UniqueID_0 = 3) AND (t7.partition IN (0,8,16,24,32,53) ) AND (t8.UniqueID_0 = 4) AND (t8.partition IN (0,8,16,24,32,53) ) AND (t9.UniqueID_0 = t2.UniqueID_1) AND (t9.String_1 = 'stackable') AND (t9.partition IN (0,8,16,24,32,53) ) AND (t10.UniqueID_0 = t3.UniqueID_1) AND (t10.String_1 = 'stackable') AND (t10.partition IN (0,8,16,24,32,53) ) AND (t11.UniqueID_0 = t4.UniqueID_1) AND (t11.String_1 = 'stackable') AND (t11.partition IN (0,8,16,24,32,53) ) AND (t12.UniqueID_0 = t5.UniqueID_1) AND (t12.String_1 = 'stackable') AND (t12.partition IN (0,8,16,24,32,53) ) AND (t13.UniqueID_0 = t6.UniqueID_1) AND (t13.String_1 = 'stackable') AND (t13.partition IN (0,8,16,24,32,53) ) AND (t14.UniqueID_0 = t7.UniqueID_1) AND (t14.String_1 = 'stackable') AND (t14.partition IN (0,8,16,24,32,53) ) AND (t15.UniqueID_0 = t8.UniqueID_1) AND (t15.String_1 = 'stackable') AND (t15.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database10','extFun1',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5,t4.UniqueID_6,t5.UniqueID_5,t5.UniqueID_6,t6.UniqueID_5,t6.UniqueID_6,t7.UniqueID_5,t7.UniqueID_6,t8.UniqueID_5) > 0.0))
+24-09-2015 23:06:10 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:10 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O1, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O2, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O3, X3, Y3, Z3, T6, T7) ) & PERFORMSSUBACTIV(1, O4, X4, Y4, Z4, T8, T9) ) & PERFORMSSUBACTIV(2, O5, X5, Y5, Z5, T10, T11) ) & PERFORMSSUBACTIV(3, O6, X6, Y6, Z6, T12, T13) ) & PERFORMSSUBACTIV(4, O7, X7, Y7, Z7, T14, T15) ) & HASOBJPROPERTY(O1, 'stackable') ) & HASOBJPROPERTY(O2, 'stackable') ) & HASOBJPROPERTY(O3, 'stackable') ) & HASOBJPROPERTY(O4, 'stackable') ) & HASOBJPROPERTY(O5, 'stackable') ) & HASOBJPROPERTY(O6, 'stackable') ) & HASOBJPROPERTY(O7, 'stackable') ) & CONSEQPAIRS14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14) ) >> PERFORMSACTIV('4444', T0, T14) {squared}
+24-09-2015 23:06:10 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.UniqueID_1 AS O,t1.UniqueID_2 AS X,t1.UniqueID_3 AS Y,t1.UniqueID_4 AS Z,t1.UniqueID_5 AS T0,t1.UniqueID_6 AS T1,t2.UniqueID_2 AS X1,t2.UniqueID_3 AS Y1,t2.UniqueID_4 AS Z1,t2.UniqueID_5 AS T2,t2.UniqueID_6 AS T3,t3.UniqueID_2 AS X2,t3.UniqueID_3 AS Y2,t3.UniqueID_4 AS Z2,t3.UniqueID_5 AS T4,t3.UniqueID_6 AS T5,t4.UniqueID_2 AS X3,t4.UniqueID_3 AS Y3,t4.UniqueID_4 AS Z3,t4.UniqueID_5 AS T6,t4.UniqueID_6 AS T7 FROM PERFORMSSUBACTIV_predicate t1, PERFORMSSUBACTIV_predicate t2, PERFORMSSUBACTIV_predicate t3, PERFORMSSUBACTIV_predicate t4, HASOBJPROPERTY_predicate t5 WHERE ((t1.UniqueID_0 = 4) AND (t1.partition IN (0,8,16,24,32,53) ) AND (t2.UniqueID_0 = 1) AND (t2.UniqueID_1 = t1.UniqueID_1) AND (t2.partition IN (0,8,16,24,32,53) ) AND (t3.UniqueID_0 = 2) AND (t3.UniqueID_1 = t1.UniqueID_1) AND (t3.partition IN (0,8,16,24,32,53) ) AND (t4.UniqueID_0 = 3) AND (t4.UniqueID_1 = t1.UniqueID_1) AND (t4.partition IN (0,8,16,24,32,53) ) AND (t5.UniqueID_0 = t1.UniqueID_1) AND (t5.String_1 = 'arrangeable') AND (t5.partition IN (0,8,16,24,32,53) ) AND (extFunctionCall('database11','extFun2',t1.UniqueID_6,t2.UniqueID_5,t2.UniqueID_6,t3.UniqueID_5,t3.UniqueID_6,t4.UniqueID_5) > 0.0))
+24-09-2015 23:06:10 TRACE RDBMSDatabase:614 - Number of results: 0
+24-09-2015 23:06:10 DEBUG AbstractRuleKernel:83 - Grounded 0 instances of rule {10.0} ( ( ( ( ( PERFORMSSUBACTIV(4, O, X, Y, Z, T0, T1) & PERFORMSSUBACTIV(1, O, X1, Y1, Z1, T2, T3) ) & PERFORMSSUBACTIV(2, O, X2, Y2, Z2, T4, T5) ) & PERFORMSSUBACTIV(3, O, X3, Y3, Z3, T6, T7) ) & HASOBJPROPERTY(O, 'arrangeable') ) & CONSEQPAIRS6(T1, T2, T3, T4, T5, T6) ) >> PERFORMSACTIV('9999', T0, T7) {squared}
+24-09-2015 23:06:10 INFO  MPEInference:107 - Beginning inference.
+24-09-2015 23:06:10 DEBUG ADMMReasoner:212 - Initializing optimization.
+24-09-2015 23:06:10 DEBUG ADMMReasoner:230 - Initializing objective terms for 7500 ground kernels
+24-09-2015 23:06:10 DEBUG ADMMReasoner:436 - Performing optimization with 300 variables and 7500 terms.
+24-09-2015 23:06:10 DEBUG ADMMReasoner:497 - Residuals at iter 0 -- Primal: 0.0 -- Dual: 0.0
+24-09-2015 23:06:10 TRACE ADMMReasoner:498 - --------- Epsilon primal: 0.0012247448713915891 -- Epsilon dual: 0.0012247448713915891
+24-09-2015 23:06:10 DEBUG ADMMReasoner:520 - Optimization completed in  1 iterations.
+24-09-2015 23:06:10 INFO  MPEInference:109 - Inference complete. Writing results to Database.
+24-09-2015 23:06:10 INFO  App:? - Objective: 0.0
+24-09-2015 23:06:10 TRACE RDBMSDatabase:521 - Executing a batch of 300 statements.
+24-09-2015 23:06:10 TRACE RDBMSDatabase:563 - SELECT DISTINCT t1.Integer_0 AS Vars0,t1.UniqueID_1 AS Vars1,t1.UniqueID_2 AS Vars2 FROM PERFORMSACTIV_predicate t1 WHERE (t1.partition IN (53) )
+24-09-2015 23:06:10 TRACE RDBMSDatabase:614 - Number of results: 300
+24-09-2015 23:06:10 TRACE RDBMSDatabase:521 - Executing a batch of 1560 statements.
+24-09-2015 23:06:10 INFO  App:? - 
+
+BASELINE RESULTS
+
+24-09-2015 23:06:10 INFO  App:? - 
+Baseline
+ Avg Acc: 1.0
+ Avg F1:  1.0
+
+24-09-2015 23:06:10 INFO  App:? - 
+Baseline
+ Cum Acc: 1.0
+ Cum F1:  0.9999999999999999
+
+24-09-2015 23:06:10 INFO  App:? - 
+Cum Recall Matrix:
+[ 1,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 1,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 1,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 1,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 ;
+  0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 0,000 1,000 ]
+24-09-2015 23:06:10 INFO  App:? - 
+
+RESULTS
+
+24-09-2015 23:06:10 INFO  App:? - 
+C
+ Avg Acc: NaN
+ Avg F1:  NaN
+
+24-09-2015 23:06:10 INFO  ConfigManager:105 - No value found for option PSLHAR.name. Returning default of .
