@@ -1,3 +1,0 @@
-plate	3
-microwave	9
-medcinebox	83

@@ -1,3 +1,0 @@
-plate	101
-plate	401
-medcinebox	86

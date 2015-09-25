@@ -1,4 +1,0 @@
-plate	1
-microwave	7
-plate	14
-medcinebox	81
